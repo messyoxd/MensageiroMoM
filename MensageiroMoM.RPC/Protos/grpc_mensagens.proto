@@ -1,0 +1,16 @@
+syntax="proto3";
+
+service Mensageiro{
+    rpc SendMessage(Message) returns (Message) {}
+}
+message Message{
+    Contact enviadoPor = 1;
+    Contact enviadoPara = 2;
+    string texto = 3;
+}
+
+message Contact{
+    string ip = 1;
+    string porta = 2;
+    string nome = 3;
+}
